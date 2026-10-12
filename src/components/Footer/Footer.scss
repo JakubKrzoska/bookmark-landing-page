@@ -1,0 +1,80 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  background-color: $color-neutral-dark;
+  padding: 36px 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 48px;
+    }
+  }
+
+  &__logo-link {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 44px;
+    }
+  }
+
+  &__link {
+    font-size: 13px;
+    font-weight: $font-weight-regular;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: $color-white;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-primary-red;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  &__social-link {
+    display: inline-flex;
+    cursor: pointer;
+
+    svg path {
+      transition: fill 0.2s ease;
+    }
+
+    &:hover svg path {
+      fill: $color-primary-red;
+    }
+  }
+}

@@ -1,0 +1,120 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.hero {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 80px;
+  overflow-x: clip;
+
+  @include desktop {
+    padding-top: 60px;
+    padding-bottom: 120px;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 56px;
+
+    @include desktop {
+      flex-direction: row;
+      gap: 60px;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    text-align: center;
+
+    @include desktop {
+      text-align: left;
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    color: $color-neutral-dark;
+  }
+
+  &__description {
+    margin-bottom: 32px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include desktop {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    @include desktop {
+      justify-content: flex-start;
+    }
+
+    .btn {
+      padding: 14px 20px;
+      font-size: 14px;
+    }
+  }
+
+  &__media {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    max-width: 578px;
+    display: flex;
+    justify-content: center;
+
+    @include desktop {
+      justify-content: flex-end;
+      max-width: 665px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+  }
+
+  // The custom rounded blue background shape created with CSS
+  &__bg-shape {
+    position: absolute;
+    right: 0;
+    top: 93px;
+    width: 80vw;
+    height: 190px;
+    background-color: $color-primary-blue;
+    border-radius: 310px 0 0 310px;
+    z-index: 1;
+    pointer-events: none;
+
+    @include tablet {
+      top: 80px;
+      width: 40vw;
+      min-width: 340px;
+      height: 285px;
+    }
+
+    @include desktop {
+      top: auto;
+      bottom: 75px;
+      width: 37vw;
+      min-width: 400px;
+      height: 300px;
+    }
+  }
+}

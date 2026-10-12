@@ -1,0 +1,109 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.faq {
+  padding-top: 60px;
+  padding-bottom: 80px;
+
+  @include desktop {
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
+
+  &__accordion {
+    max-width: 540px;
+    margin: 0 auto 54px;
+    border-top: 1px solid $color-border-gray;
+  }
+
+  &__item {
+    border-bottom: 1px solid $color-border-gray;
+  }
+
+  &__trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        .faq__question {
+          color: $color-primary-red;
+        }
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba(82, 103, 223, 0.4);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+  }
+
+  &__question {
+    font-size: 15px;
+    color: $color-neutral-dark;
+    font-weight: $font-weight-regular;
+    text-align: left;
+    transition: color 0.2s ease;
+
+    @include tablet {
+      font-size: 18px;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    margin-left: 12px;
+    margin-right: 16px;
+    flex-shrink: 0;
+
+    @include tablet {
+      margin-left: 16px;
+      margin-right: 20px;
+    }
+
+    &--open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease-in-out, opacity 0.3s ease;
+    opacity: 0;
+
+    &--open {
+      max-height: 400px;
+      opacity: 1;
+    }
+  }
+
+  &__answer {
+    padding-bottom: 28px;
+    color: $color-neutral-gray;
+    font-size: 15px;
+    line-height: 1.8;
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  &__action {
+    display: flex;
+    justify-content: center;
+  }
+}

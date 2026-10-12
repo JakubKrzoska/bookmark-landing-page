@@ -1,0 +1,92 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.download {
+  padding-top: 60px;
+  padding-bottom: 80px;
+
+  @include desktop {
+    padding-top: 80px;
+    padding-bottom: 140px;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 920px;
+    margin: 0 auto;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 32px;
+    }
+  }
+
+  &__card {
+    background-color: $color-white;
+    border-radius: 14px;
+    box-shadow: $shadow-card;
+    padding: 48px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 280px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 30px -5px rgba(73, 93, 207, 0.3);
+    }
+
+    // Staggered layout on desktop
+    @include tablet {
+      &:nth-child(2) {
+        margin-top: 36px;
+      }
+      &:nth-child(3) {
+        margin-top: 72px;
+      }
+    }
+  }
+
+  &__logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 32px;
+    object-fit: contain;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    font-size: 20px;
+  }
+
+  &__version {
+    font-size: 15px;
+    color: $color-neutral-gray;
+    margin-bottom: 32px;
+  }
+
+  &__dots {
+    width: 100%;
+    margin-bottom: 24px;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &__action {
+    width: 100%;
+
+    .btn {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 14px;
+    }
+  }
+}

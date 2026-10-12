@@ -1,0 +1,152 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'reset' as *;
+
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-body;
+  font-weight: $font-weight-regular;
+  color: $color-neutral-gray;
+  background-color: $color-white;
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  @include tablet {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+// Typography
+h1, h2, h3, h4 {
+  color: $color-neutral-dark;
+  font-weight: $font-weight-medium;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 30px;
+  text-align: center;
+
+  @include tablet {
+    font-size: 40px;
+    text-align: left;
+  }
+
+  @include desktop {
+    font-size: 48px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  text-align: center;
+
+  @include tablet {
+    font-size: 32px;
+  }
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: $font-weight-medium;
+}
+
+p {
+  color: $color-neutral-gray;
+  font-size: 15px;
+  line-height: 1.65;
+
+  @include tablet {
+    font-size: 18px;
+  }
+}
+
+// Section Header reusable style
+.section-header {
+  text-align: center;
+  max-width: 540px;
+  margin: 0 auto 48px;
+
+  h2 {
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: $color-neutral-gray;
+  }
+}
+
+// Buttons
+.btn {
+  @include button-base;
+
+  &-primary {
+    background-color: $color-primary-blue;
+    color: $color-white;
+    border-color: $color-primary-blue;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-primary-blue;
+      border-color: $color-primary-blue;
+    }
+  }
+
+  &-secondary {
+    background-color: $color-light-gray;
+    color: $color-neutral-dark;
+    border-color: transparent;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+    &:hover {
+      background-color: $color-white;
+      border-color: $color-neutral-dark;
+      color: $color-neutral-dark;
+    }
+  }
+
+  &-danger {
+    background-color: $color-primary-red;
+    color: $color-white;
+    border-color: $color-primary-red;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 13px;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-primary-red;
+      border-color: $color-primary-red;
+    }
+  }
+
+  &-outline-light {
+    background-color: transparent;
+    color: $color-white;
+    border: 2px solid $color-white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    width: 100%;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-neutral-dark;
+    }
+  }
+}
+
+// Prevent body scroll when modal or mobile nav is active
+body.menu-open,
+body.modal-open {
+  overflow: hidden;
+}
