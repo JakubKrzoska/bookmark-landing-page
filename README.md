@@ -62,23 +62,4 @@ npm run build
 ```
 Zoptymalizowane pliki produkcyjne zostaną wygenerowane w folderze `/dist`.
 
----
 
-## 📦 Przygotowanie do oddania na GitHub i Deploy
-
-1. Zainicjalizuj repozytorium git:
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: complete recruitment task landing page"
-   ```
-2. Utwórz branch ze swoim imieniem (zgodnie z wytycznymi w PDF):
-   ```bash
-   git checkout -b jakub
-   ```
-3. Wypchnij na GitHub i zdeployuj na Vercel, Netlify lub GitHub Pages:
-   ```bash
-   # Po połączeniu z repozytorium:
-   git remote add origin <URL_DO_REPOZYTORIUM>
-   git push -u origin jakub
-   ```
